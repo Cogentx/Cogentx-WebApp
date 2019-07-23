@@ -1,5 +1,7 @@
 {
   "name": "CogentxWebApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

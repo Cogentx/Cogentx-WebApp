@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>711104295228-1546hgb91b48uh06b129akgl4ri850ql.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.711104295228-1546hgb91b48uh06b129akgl4ri850ql</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCHMZwJeW9cbJi-npaNiDwO8MFr8wzPf1o</string>
+	<key>GCM_SENDER_ID</key>
+	<string>711104295228</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.app360ai.cogentx</string>
+	<key>PROJECT_ID</key>
+	<string>cogentxapp</string>
+	<key>STORAGE_BUCKET</key>
+	<string>cogentxapp.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:711104295228:ios:684df47ff24c2a5a</string>
+	<key>DATABASE_URL</key>
+	<string>https://cogentxapp.firebaseio.com</string>
+</dict>
+</plist>
