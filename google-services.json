@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "711104295228",
-    "firebase_url": "https://cogentxapp.firebaseio.com",
-    "project_id": "cogentxapp",
-    "storage_bucket": "cogentxapp.appspot.com"
+    "project_number": "99012026996",
+    "firebase_url": "https://cogentx-360ai-app.firebaseio.com",
+    "project_id": "cogentx-360ai-app",
+    "storage_bucket": "cogentx-360ai-app.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:711104295228:android:684df47ff24c2a5a",
+        "mobilesdk_app_id": "1:99012026996:android:684df47ff24c2a5a",
         "android_client_info": {
           "package_name": "com.app360ai.cogentx"
         }
       },
       "oauth_client": [
         {
-          "client_id": "711104295228-mbttmkm7oc7i3rhokgr4ptu6vcvqmm7p.apps.googleusercontent.com",
+          "client_id": "99012026996-ose0th911bfc7bpvv9balmlsa2bu3b0b.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD1xEafkNLMA5QniNo9uscLv19VlrirHlg"
+          "current_key": "AIzaSyAi5FcEKLCjDb1yVYze9gLAu2qqsaY0Xb0"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "711104295228-mbttmkm7oc7i3rhokgr4ptu6vcvqmm7p.apps.googleusercontent.com",
+              "client_id": "99012026996-ose0th911bfc7bpvv9balmlsa2bu3b0b.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "711104295228-0a4k6v26mcpqv96rhvcddlk63hb54vbg.apps.googleusercontent.com",
+              "client_id": "99012026996-sj40p418mqn6ici55t7k3j2chirit87k.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "app.360ai.cogentx"
+                "bundle_id": "com.app360ai.cogentx"
               }
             }
           ]
