@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { Router } from '@angular/router';
 import { IonSlide, IonSlides } from '@ionic/angular';
@@ -11,8 +11,6 @@ import { environment } from '../../environments/environment';
 })
 export class TutorialPage {
 
-  // isCompleteKey = 'tutorialComplete';
-
   constructor(
     private storage: Storage,
     private router: Router,
@@ -21,9 +19,10 @@ export class TutorialPage {
   @ViewChild('slides') slides: IonSlides;
 
   async finish() {
-    const key = environment.storageKeys.tutorialCompleteKey;
-    await this.storage.set(key, true);
-    this.router.navigateByUrl('/');
+    await this.storage.set(
+      environment.storageKeys.tutorialCompleteKey,
+      true);
+    this.router.navigate(['/']);
   }
 
   next() {

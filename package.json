@@ -1,8 +1,8 @@
 {
-  "name": "CogentxWebApp",
+  "name": "cogentx-360ai-app",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "CogentX360 Labs",
+  "homepage": "https://cogentx.360ai.app",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

@@ -15,19 +15,22 @@ import { environment } from '../../environments/environment';
 })
 export class TutorialGuard implements CanActivate  {
 
-  constructor(private storage: Storage, private router: Router) {
+  constructor(
+    private storage: Storage,
+    private router: Router,
+    ) {
   }
 
   async canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot,
   ): Promise<boolean> {
-    const key = environment.storageKeys.tutorialCompleteKey;
     // convert response to a boolean via !! (double-bang)
-    const isComplete: boolean = !!await this.storage.get(key);
+    const isComplete: boolean =
+      !!await this.storage.get(environment.storageKeys.tutorialCompleteKey);
 
     if (!isComplete) {
-      this.router.navigateByUrl('/tutorial');
+      this.router.navigate(['/tutorial']);
     }
     return isComplete;
   }
