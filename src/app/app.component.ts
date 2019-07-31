@@ -37,7 +37,7 @@ export class AppComponent {
 
   async resetTutorial() {
     await this.storage.set(environment.storageKeys.tutorialCompleteKey, false);
-    await this.router.navigateByUrl('/tutorial');
+    await this.router.navigate(['/tutorial']);
     this.menu.close();
   }
 }

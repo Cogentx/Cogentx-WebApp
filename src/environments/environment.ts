@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   storageKeys: {
     tutorialCompleteKey: 'tutorialComplete',
+    authRedirectKey: 'authRedirect',
   },
   firebase: {
     apiKey: 'AIzaSyDV7KRqzWnZEsZPvhoT8Ww0Mwa2hOfer3c',
@@ -15,7 +16,7 @@ export const environment = {
     storageBucket: '',
     messagingSenderId: '99012026996',
     appId: '1:99012026996:web:d7ad0d17bae269ad'
-  }
+  },
 };
 
 /*
