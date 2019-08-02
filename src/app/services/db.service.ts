@@ -1,14 +1,20 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DbService {
-  doc$(arg0: string): any {
-    throw new Error('Method not implemented.');
+
+  constructor(private afs: AngularFirestore) { }
+
+  doc$(path): Observable<any> {
+    return of(new Error('not implemeted yet...'));
   }
 
-  constructor() { }
+  updateAt(path: string, data: object): Promise<any> {
+    throw new Error('not implemeted yet...');
+  }
 
-  updateAt(path, data) {}
 }

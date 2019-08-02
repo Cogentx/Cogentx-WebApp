@@ -17,10 +17,10 @@ export const environment = {
     authDomain: 'cogentx-360ai-app.firebaseapp.com',
     databaseURL: 'https://cogentx-360ai-app.firebaseio.com',
     projectId: 'cogentx-360ai-app',
-    storageBucket: '',
+    storageBucket: 'cogentx-360ai-app.appspot.com',
     messagingSenderId: '99012026996',
     appId: '1:99012026996:web:d7ad0d17bae269ad'
-  },
+  }
 };
 
 /*

@@ -3,11 +3,11 @@
     <ion-card-subtitle>UID: {{user.uid}}</ion-card-subtitle>
     <img [src]="user.photoURL || 'assets/icon/anon.svg'" alt="ID Photo">
     <ion-card-title>{{user.displayName || 'Mysterious User'}}</ion-card-title>
-
-    <ion-card-content>
-      content will go here....
-    </ion-card-content>
   </ion-card-header>
+
+  <ion-card-content>
+    Anonymous: {{ user.isAnonymous }} <br> Email: {{ user.email || 'unknown' }}
+  </ion-card-content>
 </ion-card>
 
 
