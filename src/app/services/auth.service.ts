@@ -6,8 +6,9 @@ import {
   AngularFirestore,
   AngularFirestoreDocument,
 } from '@angular/fire/firestore';
-import { Platform } from '@ionic/angular';
+import { Platform, LoadingController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { DbService } from './db.service';
@@ -24,6 +25,8 @@ export class AuthService {
     private afAuth: AngularFireAuth,
     private router: Router,
     private storage: Storage,
+    private gplus: GooglePlus,
+    private loadingController: LoadingController,
     private platform: Platform,
     private db: DbService,
   ) {
@@ -31,7 +34,7 @@ export class AuthService {
       switchMap(user => (user ? db.doc$(`users/${user.uid}`) : of(null)))
     );
 
-    // this.handleRedirect();
+    this.handleRedirect();
   }
 
   async anonymousLogin() {
@@ -60,7 +63,6 @@ export class AuthService {
   }
 
   //// GOOGLE AUTH
-
   setRedirect(val) {
     this.storage.set(
       environment.storageKeys.authRedirectKey,
@@ -94,9 +96,37 @@ export class AuthService {
     }
   }
 
-  async nativeGoogleLogin() {
+  // webClientId obtained from GCP project connected to this Firebase project
+  async nativeGoogleLogin(): Promise<any> {
+    const gplusUser = await this.gplus.login({
+      webClientId:
+      '99012026996-ose0th911bfc7bpvv9balmlsa2bu3b0b.apps.googleusercontent.com',
+      offline: true,
+      scopes: 'profile email'
+    });
 
+    return await this.afAuth.auth.signInWithCredential(
+      auth.GoogleAuthProvider.credential(gplusUser.idToken)
+    );
   }
 
-  // private async handleRedirect() {}
+  private async handleRedirect() {
+    if ((await this.isRedirect()) !== true) {
+      return null;
+    }
+    const loading = await this.loadingController.create();
+    await loading.present();
+
+    const result = await this.afAuth.auth.getRedirectResult();
+
+    if (result.user) {
+      await this.updateUserData(result.user);
+    }
+
+    await loading.dismiss();
+
+    await this.setRedirect(false);
+
+    return result;
+  }
 }
