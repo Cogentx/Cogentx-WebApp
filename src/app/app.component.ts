@@ -7,6 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { environment } from '../environments/environment';
+import { AuthService} from '../app/services';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private menu: MenuController,
+    private auth: AuthService,
     private storage: Storage,
     private router: Router,
     private splashScreen: SplashScreen,
