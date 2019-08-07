@@ -10,7 +10,7 @@ import { Platform, LoadingController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { Observable, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, take, map } from 'rxjs/operators';
 import { DbService } from './db.service';
 import { User } from './user.model';
 import { environment } from '../../environments/environment';
@@ -23,18 +23,30 @@ export class AuthService {
 
   constructor(
     private afAuth: AngularFireAuth,
-    private router: Router,
-    private storage: Storage,
-    private gplus: GooglePlus,
-    private loadingController: LoadingController,
-    private platform: Platform,
     private db: DbService,
+    private storage: Storage,
+    private platform: Platform,
+    private loadingController: LoadingController,
+    private router: Router,
+    private gplus: GooglePlus,
   ) {
     this.user$ = this.afAuth.authState.pipe(
       switchMap(user => (user ? db.doc$(`users/${user.uid}`) : of(null)))
     );
 
     this.handleRedirect();
+  }
+
+  // Returns the user-id (uid) as a Promise...
+  // very useful in Ionic4 because all of its apis are
+  // Promise-based
+  uid() {
+    return this.user$
+      .pipe(
+        take(1),
+        map(u => u && u.uid)
+      )
+      .toPromise();
   }
 
   async anonymousLogin() {

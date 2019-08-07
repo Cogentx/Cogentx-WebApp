@@ -20,7 +20,11 @@ export const environment = {
     storageBucket: 'cogentx-360ai-app.appspot.com',
     messagingSenderId: '99012026996',
     appId: '1:99012026996:web:d7ad0d17bae269ad'
-  }
+  },
+  fsCollections: {
+    todos: 'todos',
+    users: 'users',
+  },
 };
 
 /*
